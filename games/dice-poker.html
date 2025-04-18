@@ -1,0 +1,70 @@
+<!-- games/dice-poker.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Покер на кубиках</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <style>
+		
+    </style>
+</head>
+<body>
+    <button id="goToProfile" class="nav-button">На головну</button>
+    
+	<div class="main-layout">
+	
+	<div class="side-panel">
+        <h3>Ваші кубики</h3>
+        <div id="playerDice" class="dice-row"></div>
+    </div>
+	
+	<div class="game-container">
+        <h1>🎲 Покер на кубиках</h1>
+        <p id="balance">Баланс: 100</p>
+        <label>Ставка: <input type="number" id="bet" value="10" min="1"/></label>
+        <button id="startBtn">Почати гру</button>
+        <button id="rulesBtn" style="position: fixed; top: 20px; right: 20px;">📜 Правила гри</button>
+        
+        <button id="rerollBtn" disabled>Перекинути вибрані</button>
+        <button id="confirmBtn" disabled>Підтвердити хід</button>
+        <div id="status" style="margin-top: 20px;"></div>
+    </div>
+	
+	<div class="side-panel">
+        <h3>Кубики системи</h3>
+        <div id="systemDice" class="dice-row"></div>
+    </div>
+	
+	</div>
+
+    <!-- Модальне вікно правил -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Правила гри «Покер на кубиках»</h2>
+            <ul>
+                <li>Кожен гравець (ви і система) кидає 5 шестигранних кубиків.</li>
+                <li>Ви можете обрати деякі кубики і перекинути їх один раз.</li>
+                <li>Після вашого ходу система кидає свої кубики і перекидає деякі, якщо потрібно.</li>
+                <li>Переможець визначається за силою покерної комбінації:</li>
+                <ul>
+                    <li><b>Покер</b> (5 однакових)</li>
+                    <li><b>Каре</b> (4 однакових)</li>
+                    <li><b>Фул-хаус</b> (3 однакових + пара)</li>
+                    <li><b>Стріт</b> (5 послідовних значень)</li>
+                    <li><b>Трійка</b> (3 однакових)</li>
+                    <li><b>Дві пари</b></li>
+                    <li><b>Пара</b></li>
+                    <li><b>Старша кістка</b> (якщо нічого не випало)</li>
+                </ul>
+                <li>Якщо комбінації однакові — перемагає той, у кого старші кістки.</li>
+                <li>Ви можете здатись у будь-який момент — ставка програється.</li>
+            </ul>
+        </div>
+    </div>
+
+        <script src="dice-poker.js"></script>
+</body>
+</html>

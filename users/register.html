@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація — Міні-ігри</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>📝 Реєстрація</h2>
+
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Ім'я користувача" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button type="submit" class="button">Зареєструватись</button>
+        </form>
+
+        <p>Вже маєте обліковий запис? <a href="login.html">Увійти</a></p>
+        <a href="../index.html" class="back-link">← Назад на головну</a>
+    </div>
+
+    <script src="user.js"></script>
+
+    <style>
+        .container {
+            max-width: 400px;
+            width: 90%;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>

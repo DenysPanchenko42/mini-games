@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кидки до 100</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+         
+    </style>
+</head>
+<body>
+<div class="centered-container">
+    <button id="goToProfile" class="nav-button">На головну</button>
+    <div class="game-container">
+        <h1>Кидки до 100</h1>
+
+        <div class="balance-section">
+            <p id="balance">Баланс: 100</p>
+            <label for="bet">Ваша ставка:</label>
+            <input type="number" id="bet" value="10" min="1" max="100" />
+        </div>
+
+        <div class="score-section">
+            <p id="playerScore">Гравець: 0</p>
+            <p id="systemScore">Система: 0</p>
+            <p id="turnScore">Очки цього ходу: 0</p>
+        </div>
+
+        <div class="game-actions">
+            <button id="startGame" onclick="handleStartOrSurrender()">Почати гру</button>
+            <button onclick="rollDice()" id="rollBtn" disabled>Кинути кубик</button>
+            <button onclick="takePoints()" id="takePointsBtn" disabled>Забрати очки</button>
+            <button id="rulesBtn" style="position: fixed; top: 20px; right: 20px;">📜 Правила гри</button>
+        </div>
+
+        <div id="rulesModal" style="display: none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%); width: 80%; max-width: 500px; background: white; border: 2px solid #333; padding: 20px; z-index: 1000; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
+            <h2>Правила гри</h2>
+            <p>
+                🎯 Мета гри — першим набрати 100 очок.<br><br>
+                ▶️ Гравець кидає кубик:<br>
+                – якщо випадає 2–6, ці очки додаються до "Очки цього ходу"<br>
+                – якщо випадає 1 — всі очки цього ходу згорають, хід переходить до системи<br><br>
+                🔘 Кнопка "Забрати очки" — додає очки цього ходу до загального рахунку<br><br>
+                🤖 Система кидає кубик автоматично<br><br>
+                👑 Хто перший набере 100 очок — перемагає!
+            </p>
+            <button onclick="closeRules()">Закрити</button>
+        </div>
+
+        <div id="diceResult"></div>
+        <p id="message" style="font-weight: bold; color: red;"></p>
+    </div>
+
+    <script src="race-to-100.js"></script>
+	
+</div>
+</body>
+</html>
